@@ -16,7 +16,15 @@ load_dotenv()
 # ---------- LangChain Setup ----------
 
 # Embeddings and client
-embeddings = OllamaEmbeddings(model="mxbai-embed-large")
+from langchain.embeddings import HuggingFaceEmbeddings
+
+embeddings = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-base-en-v1.5",
+    model_kwargs={"device": "cpu"},
+    encode_kwargs={"normalize_embeddings": True}
+)
+
+# embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 
 qdrant_client = QdrantClient(
     url="https://5061f8bd-e30a-45fc-9dde-44d131b1d5e2.us-east4-0.gcp.cloud.qdrant.io",
