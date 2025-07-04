@@ -16,3 +16,5 @@ openai
 
 # Optional: For local development and testing
 python-dotenv
+sentence-transformers
+torch
