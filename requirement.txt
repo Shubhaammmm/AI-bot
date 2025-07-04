@@ -1,0 +1,18 @@
+fastapi
+uvicorn
+pydantic
+
+# LangChain Core and Integrations
+langchain
+langchain-community
+langchain-groq
+langchain-ollama
+
+# Qdrant client
+qdrant-client
+
+# Optional: If you use Groq via OpenAI-compatible format
+openai
+
+# Optional: For local development and testing
+python-dotenv
