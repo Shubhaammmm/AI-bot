@@ -20,7 +20,7 @@ embeddings = OllamaEmbeddings(model="mxbai-embed-large")
 
 qdrant_client = QdrantClient(
     url="https://5061f8bd-e30a-45fc-9dde-44d131b1d5e2.us-east4-0.gcp.cloud.qdrant.io",
-    api_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.g2ks_AiOpHt7P-j0uDUOUUTkMkEC8gpwo-efqxEo9uc"
+    api_key=os.getenv("QDRANT_API_KEY")
 )
 
 vectorstore = Qdrant(
