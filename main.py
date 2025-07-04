@@ -10,7 +10,9 @@ from langchain.chains import LLMChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.retrieval_qa.base import RetrievalQA
 from qdrant_client import QdrantClient
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 # ---------- LangChain Setup ----------
 
 # Embeddings and client
@@ -46,7 +48,7 @@ Answer:"""
 
 llm = ChatGroq(
     model="llama3-8b-8192",
-    groq_api_key="GROQ_SECRET_REMOVED",
+    groq_api_key=os.getenv("GROQ_API_KEY"),
     max_tokens=512,  # increase if you need longer answers
     temperature=0.2
 )
